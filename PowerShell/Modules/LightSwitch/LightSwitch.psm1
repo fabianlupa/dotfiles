@@ -96,6 +96,10 @@ function Set-WindowsTheme {
 
     New-ItemProperty -Path $WindowsThemeRegistryPath -Name "SystemUsesLightTheme" -Value $Value -PropertyType DWORD -Force | Out-Null
     New-ItemProperty -Path $WindowsThemeRegistryPath -Name "AppsUseLightTheme" -Value $Value -PropertyType DWORD -Force | Out-Null
+
+    # Unfortunately changing the registry value does not update the task bar automatically anymore on Windows 11,
+    # therefore restart explorer.exe
+    Get-Process "explorer" | Stop-Process
 }
 
 enum SapTheme {
