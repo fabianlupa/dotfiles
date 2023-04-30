@@ -13,18 +13,32 @@ function New-Symlink() {
         [Parameter()]
         [string]$Path,
         [Parameter()]
-        [string]$Target
+        [string]$Target,
+        [Parameter()]
+        [bool]$SkipIfExists = $True
     )
-    New-Item -ItemType SymbolicLink -Path $Path -Target $Target
+
+    if ($SkipIfExists -eq $true -and (Get-Item $PowerShellHomeFolder).LinkType -eq "SymbolicLink") {
+        Write-Output "Skipping link to $Target as a symbolic link already exists on $Path"
+    }
+    else {
+        New-Item -ItemType SymbolicLink -Path $Path -Target $Target
+    }
 }
 
 $PowerShellHomeFolder = "$HOME\Documents\PowerShell"
+$VSCodeSettingsPath = "$env:AppData\Code\User\settings.json"
 
 if ($Unlink -eq $False) {
     New-Symlink -Path $PowerShellHomeFolder "$PSScriptRoot\PowerShell"
+    New-Symlink -Path $VSCodeSettingsPath "$PSScriptRoot\VSCode\settings.json"
 }
 else {
     if ((Get-Item $PowerShellHomeFolder).LinkType -eq "SymbolicLink") {
         Remove-Item $PowerShellHomeFolder
+    }
+
+    if ((Get-Item $VSCodeSettingsPath).LinkType -eq "SymbolicLink") {
+        Remove-Item $VSCodeSettingsPath
     }
 }

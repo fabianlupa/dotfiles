@@ -1,0 +1,34 @@
+{
+    // No telemetry
+    "telemetry.telemetryLevel": "off",
+    // Text rendering
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": false,
+    "editor.fontLigatures": false,
+    "editor.fontFamily": "'Cascadia Mono', 'Source Code Pro Semibold', Consolas, 'Courier New', monospace",
+    // Other editor settings
+    "editor.rulers": [
+        80,
+        120,
+        140
+    ],
+    "editor.mouseWheelZoom": true,
+    "editor.stickyScroll.enabled": true,
+    "[abap]": {
+        "editor.tabSize": 2
+    },
+    // Workbench settings
+    "workbench.activityBar.visible": true,
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.tree.indent": 20,
+    "workbench.tree.renderIndentGuides": "always",
+    // Theming
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "workbench.preferredLightColorTheme": "Default Light+",
+    "workbench.colorTheme": "Default Light+",
+    // "workbench.colorCustomizations": {
+    //     "terminal.background": "#000000"
+    // }
+}
