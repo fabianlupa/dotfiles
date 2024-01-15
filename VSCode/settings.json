@@ -17,9 +17,6 @@
     "[abap]": {
         "editor.tabSize": 2
     },
-    // Workbench settings
-    "workbench.activityBar.visible": true,
-    "workbench.editor.untitled.hint": "hidden",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tree.indent": 20,
     "workbench.tree.renderIndentGuides": "always",
@@ -27,8 +24,10 @@
     "window.autoDetectColorScheme": true,
     "workbench.preferredDarkColorTheme": "Default Dark+",
     "workbench.preferredLightColorTheme": "Default Light+",
-    "workbench.colorTheme": "Default Light+",
     // "workbench.colorCustomizations": {
     //     "terminal.background": "#000000"
     // }
+    "window.restoreWindows": "none",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.editor.empty.hint": "hidden"
 }
