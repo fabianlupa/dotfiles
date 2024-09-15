@@ -17,6 +17,7 @@
     "[abap]": {
         "editor.tabSize": 2
     },
+    "terminal.integrated.fontFamily": "CaskaydiaMono NF",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tree.indent": 20,
     "workbench.tree.renderIndentGuides": "always",
