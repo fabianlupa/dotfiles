@@ -11,6 +11,7 @@ Set-Alias mountp Mount-P
 Set-Alias unmountp Remove-MountP
 
 set-psreadlineoption -Colors @{ "InlinePrediction" = "`e[38;5;238m" }
+$PSStyle.Formatting.CustomTableHeaderLabel = $PSStyle.Formatting.TableHeader
 
 # Invoke-Expression (&starship init powershell)
 
