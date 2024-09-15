@@ -147,7 +147,10 @@ function Set-EclipseTheme {
     $NewValue = "themeid=$ThemeValue"
     $FilePath = "$WorkspacePath\.metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.e4.ui.css.swt.theme.prefs"
 
-    $Content = Get-Content $FilePath
+    $Content = ""
+    if (test-path $FilePath) {
+        $Content = Get-Content $FilePath
+    }
     if ($Content -match $SearchPattern) {
         $Content = $Content -replace $SearchPattern, $NewValue
     }
@@ -217,7 +220,15 @@ function Set-Theme {
     }
 
     $DarkWallpaperPath = "C:\Windows\Web\Wallpaper\Windows\img19.jpg"
+    $DarkWallpaperPathSurface = "C:\Windows\Web\Wallpaper\oem\surface\Next_Gen_AI_PC_OLED_8K.JPG"
+    if (Test-Path $DarkWallpaperPathSurface -PathType Leaf) {
+        $DarkWallpaperPath = $DarkWallpaperPathSurface
+    }
     $LightWallpaperPath = "C:\Windows\Web\Wallpaper\Windows\img0.jpg"
+    $LightWallpaperPathSurface = "C:\Windows\Web\Wallpaper\oem\surface\Next_Gen_AI_PC_Light_8K.JPG"
+    if (Test-Path $LightWallpaperPathSurface -PathType Leaf) {
+        $LightWallpaperPath = $LightWallpaperPathSurface
+    }
 
     $EclipseWorkspacePath = "$HOME\workspace";
 
