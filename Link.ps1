@@ -18,7 +18,7 @@ function New-Symlink() {
         [bool]$SkipIfExists = $True
     )
 
-    if ($SkipIfExists -eq $true -and (Get-Item $Path).LinkType -eq "SymbolicLink") {
+    if ($SkipIfExists -eq $true -and (Test-Path $Path) -eq $true -and (Get-Item $Path).LinkType -eq "SymbolicLink") {
         Write-Output "Skipping link to $Target as a symbolic link already exists on $Path"
     }
     else {
